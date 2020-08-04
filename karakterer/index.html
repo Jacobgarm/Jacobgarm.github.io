@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<head>
+    <title>Karakterudregner</title>
+    <script src="udregner.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta charset="utf-8" />
+</head>
+<body>
+  <h1>Karakterudregner</h1>
+  <p>Udregner et vægtet gennemsnit fra de givne karakterer</p>
+  <label for="læs">Læsning:</label>
+  <input type="text" id="læs" name="læs"><br><br>
+  <label for="ret">Retskrivning:</label>
+  <input type="text" id="ret" name="ret"><br><br>
+  <label for="skr">Skriftlig fremstilling:</label>
+  <input type="text" id="skr" name="skr"><br><br>
+  <label for="mun">Mundtlig:</label>
+  <input type="text" id="mun" name="mun"><br><br>
+  <input type="submit" value="Udregn" onclick="udregnGennemsnit()">
+  <p id="resultat"></p>
+</body>
