@@ -1,3 +1,9 @@
+/*
+Made by Jacob Garm Pedersen
+A simulated sundial, which runs in realtime
+Each day of the month has a slightly different tint.
+*/
+
 let azimuth = 0
 let rt = true
 let dt
@@ -11,20 +17,18 @@ function setup() {
   textAlign(CENTER,CENTER)
   textSize(45)
   minS = min(width,height)
-  towD = minS/15
-  towH = minS/8
+  towD = minS/13
+  towH = minS/7
   colorMode(HSB)
   dt = new Date()
   randomSeed(dt.getDay()*10747 + 514)
-  print(dt.getDay())
   hueval = random()*360
-  
 }
 
 function draw() {
   if (rt) {
     dt = new Date()
-    let time = dt.getHours() * 3600 + dt.getMinutes() * 60 + dt.getSeconds()
+    let time = dt.getHours() * 3600 + dt.getMinutes() * 60 + dt.getSeconds() + dt.getMilliseconds() / 1000
     azimuth = time / 86400 * TWO_PI
   } else {
     azimuth = (azimuth + 0.005) % TWO_PI
@@ -50,12 +54,13 @@ function draw() {
     else
       fill(20)
     text(dt.toLocaleTimeString(), 0, height/3)
+    text(dt.toLocaleDateString(), 0, height/3 + 60)
   }
 }
 
 function windowResized() {
   resizeCanvas(windowWidth, windowHeight)
   minS = min(width,height)
-  towD = minS/15
-  towH = minS/8
+  towD = minS/13
+  towH = minS/7
 }
