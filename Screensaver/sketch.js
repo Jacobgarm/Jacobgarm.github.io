@@ -34,7 +34,7 @@ function draw() {
     azimuth = (azimuth + 0.005) % TWO_PI
   }
   let altitude = -cos(azimuth) - 0.25
-  let light = max(100*sin(altitude)*1.4,10)
+  let light = max(100*sin(altitude)*1.4,5)
   let shadowHeight = abs(towH / tan(altitude))
   translate(width/2,height/2)
   scale(1,-1)
