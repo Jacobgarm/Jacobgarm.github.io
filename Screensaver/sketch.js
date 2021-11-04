@@ -21,7 +21,7 @@ function setup() {
   towH = minS/7
   colorMode(HSB)
   dt = new Date()
-  randomSeed(dt.getDay()*10747 + 514)
+  randomSeed((dt.getDay()+3)*10747 + 514)
   hueval = random()*360
 }
 
@@ -39,7 +39,7 @@ function draw() {
   translate(width/2,height/2)
   scale(1,-1)
   
-  background(hueval, 15, light)
+  background(hueval, 12, light)
   fill(hueval, 5, light/4)
   rotate(-azimuth)
   rect(-towD/2,0,towD,-shadowHeight)
@@ -53,14 +53,14 @@ function draw() {
       fill(80)
     else
       fill(20)
-    text(dt.toLocaleTimeString(), 0, height/3)
-    text(dt.toLocaleDateString(), 0, height/3 + 60)
+    text(dt.toLocaleTimeString('da-DK'), 0, height/3)
+    text(dt.toLocaleDateString('da-DK'), 0, height/3 + 60)
   }
 }
 
 function windowResized() {
   resizeCanvas(windowWidth, windowHeight)
   minS = min(width,height)
-  towD = minS/13
-  towH = minS/7
+  towD = minS/15
+  towH = minS/8
 }
